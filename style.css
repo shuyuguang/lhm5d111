@@ -16,8 +16,8 @@ body {
 
 /* --- 手机外壳 --- */
 .phone {
-    width: 330px;
-    height: 630px;
+    width: 360px;
+    height: 640px;
     background-color: #BDDDF4;
     border-radius: 36px;
     padding: 11px;
@@ -62,7 +62,7 @@ body {
 /* --- 电池样式  --- */
 .battery-capsule {
     width: 35px;
-    height: 13px;
+    height: 14px;
     border: 1.5px solid var(--text-primary);
     border-radius: 12px;
     position: relative;
@@ -102,7 +102,7 @@ body {
     font-weight: 500;
     position: relative;
     z-index: 2;
-    top: -1px;
+    top: -0.5px;，
 }
 
 /* --- 主要的应用网格区域 --- */

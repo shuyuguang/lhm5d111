@@ -39,11 +39,12 @@ function setupBattery() {
     }
 }
 
-// 【新增】一个用于显示静态满电图标的函数
+// 【修改点】优化了iOS上的显示逻辑
 function showStaticFullBattery() {
     if (batteryCapsule) {
-        // 显示100%的电量文字
-        if (batteryLevelText) batteryLevelText.textContent = '100';
+        // 在iOS上，只显示满电图标，不显示具体的数字'100'，避免误解
+        if (batteryLevelText) batteryLevelText.textContent = ''; // 将数字清空
+        
         // 将遮罩层宽度设为0，这样看起来就是满电
         if (batteryLiquid) batteryLiquid.style.width = '0%';
     }
