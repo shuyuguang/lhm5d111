@@ -43,7 +43,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 1.5rem 0.5rem;
+    padding: 1.5rem 2rem 0.5rem;
     font-size: 1.4rem;
     font-weight: 500;
     color: var(--text-primary);
@@ -62,8 +62,8 @@ body {
 
 /* --- 电池样式 (无变化) --- */
 .battery-capsule {
-    width: 3.5rem;
-    height: 1.4rem;
+    width: 3.2rem;
+    height: 1.3rem;
     border: 0.1rem solid var(--text-primary);
     border-radius: 1.2rem;
     position: relative;
@@ -214,9 +214,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 3rem; 
-    
-    /* 【修改】移除圆角，使其在动画中也是直角 */
-    /* border-radius: 1.7rem; */
+    border-radius: 1.7rem;
     
     /* 动画的初始状态：不可见，且根据JS计算的位置进行缩放和位移 */
     opacity: 0;
@@ -235,31 +233,76 @@ body {
     pointer-events: auto;
 }
 
+/* --- 【修改】页面头部样式 --- */
 .page-header {
     display: flex;
     align-items: center;
+    /* 使用 space-between 将左右两部分推到两端 */
+    justify-content: space-between; 
     padding: 1.2rem 1.5rem;
     border-bottom: 1px solid #dcdcdc; 
     flex-shrink: 0;
 }
 
-.page-header .back-btn {
-    font-size: 2.0rem;
-    cursor: pointer;
-    padding-right: 1.5rem;
-    color: #000000;
+/* 【新增】头部左侧容器 */
+.page-header-left {
     display: flex;
     align-items: center;
 }
 
+/* 这是修改后的代码 */
+.page-header .back-btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding-right: 1.2rem;
+    color: #000000;
+    display: flex;
+    align-items: center;
+
+    /* 【新增】下面两行用于向下微调位置 */
+    position: relative;
+    top: 0.1rem; /* 你可以调整这个值，比如 0.1rem 或 3px */
+}
+
+/* 【修改】移除 h2 的绝对居中样式 */
 .page-header h2 {
     margin: 0;
     font-size: 1.7rem;
     font-weight: 600;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* 移除以下三行 */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
 }
+
+/* --- 【修改】头部右侧操作按钮样式 --- */
+.page-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem; /* 【优化】增大了图标按钮之间的间距 */
+}
+
+.action-item {
+    /* font-size: 1.6rem;  - 移除，大小由内部图标决定 */
+    font-weight: 500;
+    color: #000000; /* 【已修改】将颜色从蓝色改为黑色 */
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+/* 【新增】为图标设置特定大小，使其更清晰 */
+.action-item i {
+    font-size: 2rem; 
+}
+
+.action-item:hover {
+    opacity: 0.7;
+}
+
+.action-item:active {
+    opacity: 0.5;
+}
+
 
 .page-content {
     padding: 2rem;
